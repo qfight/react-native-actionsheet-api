@@ -28,6 +28,10 @@ export default class ActionSheet extends Component {
       this.__should_not_render = true;
     }
   }
+  
+  componentWillUnmount() {
+    global.__action_sheet = null;
+  }
 
   show (opts, callback) {
     let sheets = this.state.sheets;
